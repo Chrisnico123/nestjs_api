@@ -28,6 +28,19 @@ export class CastController {
       };
     }
   }
+
+  @Get('language/:id')
+  async getLanguage(@Param('id', ParseIntPipe) id: string) {
+    try {
+      return await this.castService.fetchDataLanguageById(id);
+    } catch (error) {
+      return {
+        status: HttpStatus.INTERNAL_SERVER_ERROR,
+        error: `${error}`,
+      };
+    }
+  }
+
   @Get(':id')
   async getCastById(@Param('id', ParseIntPipe) id: number) {
     try {

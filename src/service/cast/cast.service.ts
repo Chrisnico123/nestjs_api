@@ -21,6 +21,21 @@ export class CastService {
     };
   }
 
+  async fetchDataLanguageById(castId: string) {
+    const result = await this.castRepository
+      .createQueryBuilder()
+      .select('movie.language')
+      .distinct(true)
+      .from('movie', 'movie')
+      .innerJoin('moviecast', 'moviecast', 'movie.id = moviecast.movieId')
+      .innerJoin('cast', 'c', 'moviecast.castId = c.id')
+      .where('movie.rating >= 4.5')
+      .andWhere('c.id = :castId', { castId: castId })
+      .getRawMany();
+
+    return result.map((item) => item.movie_language);
+  }
+
   async fetchCastById(id: number) {
     const cast = await this.castRepository.findOneBy({ id });
 
