@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Cast } from 'src/model/cast';
+import { Cast } from 'src/model/cast/cast';
 import { Repository } from 'typeorm';
 import { CreateCastDto } from 'src/dto/CreateCast.dto';
 import { UpdateCastDto } from 'src/dto/UpdateCast.dto';

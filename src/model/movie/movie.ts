@@ -5,7 +5,7 @@ import {
   ManyToMany,
   JoinTable,
 } from 'typeorm';
-import { Cast } from './cast';
+import { Cast } from '../cast/cast';
 
 @Entity({ name: 'movie' })
 export class Movie {

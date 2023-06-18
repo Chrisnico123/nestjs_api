@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Movie } from 'src/model/movie';
+import { Movie } from 'src/model/movie/movie';
 import { Repository } from 'typeorm';
 import { CreateMovieDto } from 'src/dto/CreateMovie.dto';
 import { UpdateMovieDto } from 'src/dto/UpdateMovie.dto';
