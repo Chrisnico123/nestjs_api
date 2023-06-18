@@ -22,6 +22,10 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+## Collection
+
+[Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/23098382-7e660b69-c45e-4b43-8d85-6296b5ea1c1c?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D23098382-7e660b69-c45e-4b43-8d85-6296b5ea1c1c%26entityType%3Dcollection%26workspaceId%3De4f9c271-85b2-4137-9202-22cc9d4153a6)
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
