@@ -4,6 +4,7 @@ import { Cast } from 'src/model/cast';
 import { Repository } from 'typeorm';
 import { CreateCastDto } from 'src/dto/CreateCast.dto';
 import { UpdateCastDto } from 'src/dto/UpdateCast.dto';
+import { getHoroscope, isLeapYear } from 'src/utils/types';
 
 @Injectable()
 export class CastService {
@@ -13,11 +14,16 @@ export class CastService {
 
   async fetchCast() {
     const data = await this.castRepository.find();
+    const cast = data.map((item) => ({
+      ...item,
+      isLeap: isLeapYear(item.birthday.getFullYear()),
+      horoscope: getHoroscope(item.birthday),
+    }));
     return {
       statusCode: HttpStatus.OK,
       status: 'success',
       message: 'Success Get Data',
-      data: data,
+      data: cast,
     };
   }
 
